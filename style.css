@@ -1,33 +1,23 @@
-/* Importar fonte segura do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 150vh;
+  min-height: 100vh;
   background-color: rgb(94, 93, 93);
   margin: 0;
   padding: 0;
-}
-
-/* Fonte padrão para todo o site */
-p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
   font-family: 'Dancing Script', cursive;
-  color: black;
-  font-weight: 400;
-  z-index: 2;
 }
 
 /* Container do cartão */
 .birthdayCard {
   position: relative;
-  width: 250px;
-  height: 250px;
-  cursor: grabbing;
+  width: 280px;
+  height: 430px;
   transform-style: preserve-3d;
   transform: perspective(2500px);
-  transition: 4s;
+  transition: 1s;
+  cursor: pointer;
 }
 
 .birthdayCard:hover {
@@ -46,7 +36,24 @@ p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
   display: none;
 }
 
-/* Frente do cartão */
+/* Suporte para mobile: toque ativa a virada */
+.birthdayCard.flipped {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 800px 160px 800px white, 0 10px 100px rgb(223, 18, 250);
+}
+
+.birthdayCard.flipped .cardFront {
+  transform: rotateY(-160deg);
+}
+
+.birthdayCard.flipped .front-text,
+.birthdayCard.flipped .wrap-deco,
+.birthdayCard.flipped .wrap-decoTwo,
+.birthdayCard.flipped .plate {
+  display: none;
+}
+
+/* Parte da frente do cartão */
 .cardFront {
   position: relative;
   background-color: rgb(216, 210, 210);
@@ -62,47 +69,29 @@ p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
   transition: .4s;
 }
 
-/* Textos da frente */
-.happy {
-  position: relative;
-  text-align: left;
-  font-size: 33px;
-  top: 160px;
-}
-
-.toyou {
-  position: relative;
-  text-align: left;
-  font-size: 33px;
-  top: 93px;
-}
-
+.happy,
+.toyou,
 .bday {
   position: relative;
-  font-size: 30px;
+  font-family: "Monotype Corsiva", cursive;
   text-align: left;
-  top: 127px;
+  backface-visibility: hidden;
+  font-size: 30px;
+  color: #000;
 }
 
-/* Decorações */
-.wrap-deco,
-.wrap-decoTwo {
+.happy { top: 160px; }
+.toyou { top: 93px; }
+.bday  { top: 127px; }
+
+/* Decoração */
+.wrap-deco {
   position: absolute;
   top: -230px;
-}
-
-.wrap-deco {
   left: -220px;
 }
 
-.wrap-decoTwo {
-  left: 475px;
-  transform: scaleX(-1);
-}
-
-.decorations,
-.decorationsTwo,
-.decorationsThree {
+.decorations {
   position: absolute;
   width: 400px;
   height: 300px;
@@ -138,8 +127,7 @@ p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
   transform: rotate(-17deg);
 }
 
-.decorationsTwo:before,
-.decorationsThree:before {
+.decorationsTwo:before {
   border-top: 40px solid #00f5d4;
   top: 268px;
   left: 315px;
@@ -154,7 +142,21 @@ p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
   transform: rotate(-40deg);
 }
 
-/* Parte interna do cartão */
+.wrap-decoTwo {
+  transform: scaleX(-1);
+  position: absolute;
+  top: -230px;
+  left: 475px;
+}
+
+.decorationsThree:before {
+  border-top: 40px solid #00f5d4;
+  top: 268px;
+  left: 315px;
+  transform: rotate(-30deg);
+}
+
+/* Parte de dentro do cartão */
 .cardInside {
   position: absolute;
   background-color: #d6caca;
@@ -173,28 +175,17 @@ p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
 }
 
 .wishes {
-  position: relative;
+  position: static;
   top: -90px;
   margin: 20px;
+}
+
+p {
+  font-family: "Monotype Corsiva", cursive;
+  color: #000;
+  font-size: 16px;
 }
 
 .name {
   margin-left: 160px;
 }
-/* Estado "virado" para toque/celular */
-.birthdayCard.flipped {
-  transform: perspective(2500px) rotate(5deg);
-  box-shadow: inset 800px 160px 800px white, 0 10px 100px rgb(223, 18, 250);
-}
-
-.birthdayCard.flipped .cardFront {
-  transform: rotateY(-160deg);
-}
-
-.birthdayCard.flipped .front-text,
-.birthdayCard.flipped .wrap-deco,
-.birthdayCard.flipped .wrap-decoTwo,
-.birthdayCard.flipped .plate {
-  display: none;
-}
-
