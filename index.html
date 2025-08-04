@@ -57,5 +57,21 @@
       </div>
     </div>
   </div>
+
+  <script>
+  // Detecta toques ou cliques no cartão
+  const card = document.querySelector('.birthdayCard');
+  let isFlipped = false;
+
+  card.addEventListener('click', () => {
+    isFlipped = !isFlipped;
+
+    if (isFlipped) {
+      card.classList.add('flipped');
+    } else {
+      card.classList.remove('flipped');
+    }
+  });
+</script>
 </body>
 </html>
