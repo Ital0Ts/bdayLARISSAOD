@@ -168,13 +168,13 @@ p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
 
 .inside-text {
   position: relative;
-  top: -150px;
+  top: -170px;
   transform: scale(0.9);
 }
 
 .wishes {
   position: static;
-  top: -90px;
+  top: -80px;
   margin: 20px;
 }
 
