@@ -173,7 +173,7 @@ p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
 }
 
 .wishes {
-  position: relative;
+  position: center;
   top: -90px;
   margin: 20px;
 }
