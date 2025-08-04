@@ -168,32 +168,16 @@ p, .happy, .toyou, .bday, .inside-text, .wishes, .name {
 
 .inside-text {
   position: relative;
-  top: -170px;
+  top: -150px;
   transform: scale(0.9);
 }
 
 .wishes {
   position: relative;
-  top: -80px;
+  top: -90px;
   margin: 20px;
 }
 
 .name {
   margin-left: 160px;
-}
-/* Estado "virado" para toque/celular */
-.birthdayCard.flipped {
-  transform: perspective(2500px) rotate(5deg);
-  box-shadow: inset 800px 160px 800px white, 0 10px 100px rgb(223, 18, 250);
-}
-
-.birthdayCard.flipped .cardFront {
-  transform: rotateY(-160deg);
-}
-
-.birthdayCard.flipped .front-text,
-.birthdayCard.flipped .wrap-deco,
-.birthdayCard.flipped .wrap-decoTwo,
-.birthdayCard.flipped .plate {
-  display: none;
 }
